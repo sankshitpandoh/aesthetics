@@ -1,39 +1,54 @@
-import React from "react";
+import React, { MouseEventHandler } from "react";
+import { GradientGlowButton, OutlinedGradientButton } from "./variants";
 
 export interface ButtonProps {
-    clicker: (e: React.MouseEvent) => Event,
-    removeConsole?: boolean
+    onClick?: MouseEventHandler<HTMLButtonElement>,
+    removeErrorConsole?: boolean
     label?: string
     children?: React.ReactNode
     style?: React.CSSProperties
-
+    variant? : 'gradGlow' | 'gradOutline'
 }
+
 
 const Button = (props: ButtonProps) => {
 
     const clickerNotPassed = () => {
-        if (props.removeConsole) {
-            console.log("No action defined for 'onClick' attr of Button")
+        if (!props.removeErrorConsole) {
+            console.log("No action defined for 'clicker' attr of Button")
         }
         return () => null;
     }
+
+    const VariantDecider = (dataProps: ButtonProps) => {
+        switch (variant) {
+            case 'gradGlow':
+                return <GradientGlowButton {...dataProps} />
+            case 'gradOutline':
+                return <OutlinedGradientButton {...dataProps} />
+            default:
+                return <button {...dataProps} />
+        }
+    }
+
     const {
         children,
-        clicker = clickerNotPassed(),
+        onClick = clickerNotPassed(),
         label = "",
-        style = {},
+        variant = "glow",
         ...other
     } = props;
 
-
     return (
-        <button
-            onClick={(e) => clicker(e)}
+        <VariantDecider
+            onClick={(e) => onClick(e)}
+            style={props?.style || {}}
+            {...other}
         >
             {
                 children || label
             }
-        </button>
+        </VariantDecider>
     )
 }
 
