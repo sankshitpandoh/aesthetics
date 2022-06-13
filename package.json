@@ -1,10 +1,12 @@
 {
-  "name": "aesthetics",
+  "name": "aesthetics-ui",
   "version": "0.0.0",
   "description": "A component UI Library",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "rollup": "rollup -c"
+    "rollup": "rollup -c",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "repository": {
     "type": "git",
@@ -23,11 +25,23 @@
   },
   "homepage": "https://github.com/sankshitpandoh/aesthetics#readme",
   "devDependencies": {
+    "@babel/core": "^7.18.2",
     "@rollup/plugin-commonjs": "^22.0.0",
     "@rollup/plugin-node-resolve": "^13.3.0",
     "@rollup/plugin-typescript": "^8.3.3",
+    "@storybook/addon-actions": "^6.5.8",
+    "@storybook/addon-essentials": "^6.5.8",
+    "@storybook/addon-interactions": "^6.5.8",
+    "@storybook/addon-links": "^6.5.8",
+    "@storybook/builder-webpack4": "^6.5.8",
+    "@storybook/manager-webpack4": "^6.5.8",
+    "@storybook/react": "^6.5.8",
+    "@storybook/testing-library": "0.0.12",
     "@types/react": "^18.0.12",
+    "@types/styled-components": "^5.1.25",
+    "babel-loader": "^8.2.5",
     "react": "^18.1.0",
+    "react-dom": "^18.1.0",
     "rollup": "^2.75.6",
     "rollup-plugin-dts": "^4.2.2",
     "tslib": "^2.4.0",
@@ -38,5 +52,8 @@
   "files": [
     "dist"
   ],
-  "types": "dist/index.d.ts"
+  "types": "dist/index.d.ts",
+  "dependencies": {
+    "styled-components": "^5.3.5"
+  }
 }
