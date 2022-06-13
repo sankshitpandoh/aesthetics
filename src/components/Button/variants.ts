@@ -122,3 +122,38 @@ export const OutlinedGradientButton = styled.button<ButtonProps>`
         -webkit-mask-composite: destination-out;
     }
 `
+
+
+export const OutlinedSolidButton = styled.button<ButtonProps>`
+    line-height: 1;
+    font-size: 14px;
+    background: ${colorProvider.borderColor1};
+    color: ${colorProvider.mainDark(0.87)};
+    color: ${colorProvider.primaryTextColor};
+    text-transform: none;
+    transition: 0.5s ease-in-out;
+    box-shadow: none;
+    padding: 9px;
+    cursor: pointer;
+    border-radius: 5px;
+    border: 1px solid ${colorProvider.borderColor1};
+    &:hover {
+        background-color: transparent;
+        box-shadow: none;
+        color: ${colorProvider.borderColor1};
+    }
+    "&:disabled": {
+        backgroundColor: themeColorProvider("helperColor13", 0.2),
+        color: themeColorProvider("mainColorDark", 0.5) + " !important",
+        border: "1px solid transparent",
+        boxShadow: "none",
+        cursor: "not-allowed",
+        "&:hover": {
+            backgroundColor: themeColorProvider("helperColor13", 0.2),
+            color: themeColorProvider("mainColorDark", 0.5),
+            border: "1px solid transparent",
+            boxShadow: "none",
+            cursor: "not-allowed",
+        },
+    },
+`
