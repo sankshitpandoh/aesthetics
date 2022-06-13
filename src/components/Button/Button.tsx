@@ -1,12 +1,13 @@
 import React, { MouseEvent, MouseEventHandler } from "react";
 import { GradientGlowButton, OutlinedGradientButton, OutlinedSolidButton } from "./variants";
+import { ButtonTypes } from "./Button.types";
 
 export interface ButtonProps {
     onClick?: MouseEventHandler<HTMLButtonElement>,
     label?: string
     children?: React.ReactNode
     style?: React.CSSProperties
-    variant? : 'gradGlow' | 'gradOutline' | 'solidOutline'
+    variant? : typeof ButtonTypes[number]
 }
 
 
