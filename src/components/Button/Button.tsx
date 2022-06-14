@@ -1,5 +1,5 @@
 import React, { MouseEvent, MouseEventHandler } from "react";
-import { GradientGlowButton, OutlinedGradientButton, OutlinedSolidButton } from "./variants";
+import { DefaultButton, GradientGlowButton, OutlinedGradientButton, OutlinedSolidButton } from "./variants";
 import { ButtonTypes } from "./Button.types";
 
 export interface ButtonProps {
@@ -26,7 +26,7 @@ const Button = (props: ButtonProps) => {
             case 'solidOutline':
                 return <OutlinedSolidButton {...dataProps} />
             default:
-                return <GradientGlowButton {...dataProps} />
+                return <DefaultButton {...dataProps} />
         }
     }
 
@@ -34,7 +34,7 @@ const Button = (props: ButtonProps) => {
         children,
         label='',
         onClick=clickerNotPassed,
-        variant="gradGlow",
+        variant="default",
         ...other
     } = props;
 

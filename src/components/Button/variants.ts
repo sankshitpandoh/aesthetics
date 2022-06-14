@@ -157,3 +157,35 @@ export const OutlinedSolidButton = styled.button<ButtonProps>`
         },
     },
 `
+
+export const DefaultButton = styled.button<ButtonProps>`
+    background: ${colorProvider.helperColor2(0.15)};
+    color: ${colorProvider.helperColor3};
+    text-transform: none;
+    transition: 0.5s ease-in-out;
+    box-shadow: none;
+    padding: 9px;
+    cursor: pointer;
+    border-radius: 5px;
+    border: 1px solid ${colorProvider.helperColor2(0.15)};
+    &:hover {
+        background-color: ${colorProvider.helperColor4(0.15)};
+        boxShadow: none;
+        color: ${colorProvider.helperColor2(1)};
+    }
+    &:disabled {
+        background-color: ${colorProvider.helperColor4(0.2)};
+        color: ${colorProvider.primaryTextColor};
+        opacity: 0.7;
+        border: 1px solid transparent;
+        box-shadow: none;
+        cursor: not-allowed;
+        &:hover {
+            background-color:  ${colorProvider.helperColor4(0.2)};
+            color: ${colorProvider.mainDark(0.5)};
+            border: 1px solid transparent;
+            box-shadow: none;
+            cursor: not-allowed;
+        },
+    },
+`
