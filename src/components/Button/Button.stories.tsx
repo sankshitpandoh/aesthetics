@@ -6,7 +6,8 @@ import {text} from '@storybook/addon-knobs'
 import Button, { ButtonTypes} from './';
 
 export default {
-  label: 'Example/Button',
+  label: 'This is a label test',
+  title: "Buttons",
   component: Button,
 
 } as ComponentMeta<typeof Button>;
@@ -17,7 +18,7 @@ const Template: ComponentStory<typeof Button> = (args) => (
   <>
     <div style={{marginBottom: "15px"}}>
       {ButtonTypes.map((type) => (
-        <Button label={`${type} button`} variant={type} style={{marginRight: "20px"}}   />
+        <Button label={`${type} Button`} variant={type} style={{marginRight: "20px"}}   />
       ))}
     </div>
     <div>
@@ -27,11 +28,11 @@ const Template: ComponentStory<typeof Button> = (args) => (
   </>
 )
 
-export const AllButtons = Template.bind({});
-AllButtons.args = {
-  style: {color: "white"},
+export const ActionButtons = Template.bind({});
+ActionButtons.args = {
+  style: {},
   label: btnText,
-  onClick:() => alert("Button Clicked")
+  onClick:() => alert("Button Clicked"),
 };
 
 
