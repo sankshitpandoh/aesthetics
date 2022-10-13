@@ -1,8 +1,8 @@
 export const defaultGradientMakers = {
 	gradStartColor1: "#5682e6",
 	gradEndColor1: "#e19cc1",
-    gradStartColor2: "#5081e8",
-    gradEndColor2: "#ed9ebd",
+	gradStartColor2: "#5081e8",
+	gradEndColor2: "#ed9ebd",
 	glowColor: "#fff",
 }
 
@@ -18,8 +18,6 @@ export const colorProvider = {
     helperColor2: (x:number) => `rgba(123, 112, 204, ${x || 1})`,
     helperColor3: "#A98ACF",
     helperColor4: (x:number) => `rgba(169, 138, 207, ${x || 1})`
-
-    
 }
 
 
